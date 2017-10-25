@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import './index.css';
 import { Provider } from 'react-redux';
 import mainStore from './store';
@@ -14,5 +15,5 @@ const wrapper = (
   </Provider>
 );
 
-ReactDOM.render(wrapper, document.getElementById('root'));
+render(wrapper, document.getElementById('root'));
 registerServiceWorker();
