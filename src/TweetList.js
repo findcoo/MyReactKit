@@ -14,13 +14,13 @@ var chance = new Change()
 class TweetList extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       tweet: '',
       username: slugify(chance.name()),
       loading: false,
       remaining: tweet_limit
-    };
+    }
   }
   
   renderTweet = (key, tweet) => (
@@ -30,12 +30,12 @@ class TweetList extends Component {
       </header>
       <div className="tweet" dangerouslySetInnerHTML={{__html: twitter_text.autoLink(twitter_text.htmlEscape(tweet.text))}}></div>
     </article>
-  );
+  )
 
   updateText = (evt) => {
-    let tweet = evt.target.value;
-    let remaining = tweet_limit - twitter_text.getTweetLength(tweet);
-    this.setState({ tweet, remaining });
+    let tweet = evt.target.value
+    let remaining = tweet_limit - twitter_text.getTweetLength(tweet)
+    this.setState({ tweet, remaining })
   }
   
   submitTweet = () => {
@@ -56,7 +56,7 @@ class TweetList extends Component {
   subscribeSubs = (subs, props, state) => props.stare.subscribeSubs(subs)
   
   render() {
-    const tweets = this.props.store.getTweets();
+    const tweets = this.props.store.getTweets()
     if (!tweets) {
       return <div>Loading tweets...</div>
     }

@@ -1,5 +1,5 @@
 {
-    "standard.enable": false,
+    "standard.enable": true,
     "version": "0.2.0",
     "configurations": [{
         "name": "Chrome",
